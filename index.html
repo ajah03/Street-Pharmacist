@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Pharmacist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background: #575757;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .feature-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            flex: 1 1 calc(33% - 2rem);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #f0f0f0;
+        }
+        .feature-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        #confirmation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #confirmation-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+        }
+        #confirmation-content h2 {
+            color: #333;
+        }
+        #confirmation-content button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #confirmation-content button:hover {
+            background: #45a049;
+        }
+        .prompts {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .prompts ul {
+            list-style: disc;
+            padding-left: 2rem;
+        }
+    </style>
+    <script>
+        function confirmDisclaimer() {
+            document.getElementById('confirmation-modal').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div id="confirmation-modal">
+        <div id="confirmation-content">
+            <h2>Important Notice</h2>
+            <p>This app is not a replacement for professional medical advice. It is designed to aid individuals who lack access to medical professionals.</p>
+            <p>If you are experiencing a medical emergency, please call 911 immediately.</p>
+            <button onclick="confirmDisclaimer()">I Understand</button>
+        </div>
+    </div>
+    <header>
+        <h1>Street Pharmacist</h1>
+        <p>Empowering you with safe self-care when healthcare isn't accessible.</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#faq">About/FAQ</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container" id="home">
+        <h2>Welcome to Street Pharmacist</h2>
+        <p>
+            Our app is designed to guide you through safe self-care using over-the-counter medication and holistic practices. 
+            It's a tool for those moments when professional medical help isn't immediately available. 
+        </p>
+        <p><strong>Important:</strong> This app is not a replacement for professional medical advice. Please consult a healthcare provider whenever possible.</p>
+    </div>
+    <div class="container" id="features">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Medication Scanner</h3>
+                <p>Scan OTC medications to learn their uses and possible side effects.</p>
+                <img src="https://via.placeholder.com/300x200?text=Medication+Scanner" alt="Medication Scanner">
+            </div>
+            <div class="feature-card">
+                <h3>Interaction Checker</h3>
+                <p>Input your current medications to check for harmful interactions. Visit <a href="https://www.drugs.com/drug_interactions.html" target="_blank">Drug Interaction Checker</a>.</p>
+                <img src="https://via.placeholder.com/300x200?text=Interaction+Checker" alt="Interaction Checker">
+            </div>
+            <div class="feature-card">
+                <h3>Holistic Guidance</h3>
+                <p>Explore breathing exercises, tea remedies, and dietary suggestions tailored to your needs.</p>
+                <img src="https://via.placeholder.com/300x200?text=Holistic+Guidance" alt="Holistic Guidance">
+            </div>
+            <div class="feature-card">
+                <h3>Ingredient Suggestions</h3>
+                <p>Get recommendations for active ingredients to look for in OTC drugs. For example, <a href="https://www.drugs.com/ingredient/" target="_blank">dextromethorphan</a> helps treat coughs.</p>
+                <img src="https://via.placeholder.com/300x200?text=Ingredients" alt="Active Ingredients">
+            </div>
+            <div class="feature-card">
+                <h3>Label Translation</h3>
+                <p>Use our partner tool to translate medication labels: <a href="https://www.yeschat.ai/gpts-9t55QZj1GEa-MediTranslate" target="_blank">MediTranslate</a>.</p>
+                <div class="prompts">
+                    <strong>Suggested Translation Questions:</strong>
+                    <ul>
+                        <li>"How long does it take to work?"</li>
+                        <li>"What are the side effects?"</li>
+                        <li>"Will this make me sleepy?"</li>
+                        <li>"How should I take this medicine?"</li>
+                    </ul>
+                </div>
+                <img src="https://via.placeholder.com/300x200?text=Translate+Labels" alt="Translate Labels">
+            </div>
+            <div class="feature-card">
+                <h3>Emergency Help</h3>
+                <p>Quickly contact 911 or locate nearby clinics in case of urgent needs.</p>
+                <img src="https://via.placeholder.com/300x200?text=Emergency+Help" alt="Emergency Help">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="faq">
+        <h2>About/FAQ</h2>
+        <h3>Is this app a replacement for doctors?</h3>
+        <p>No, this app is a supplementary tool for safe self-care when immediate access to a healthcare provider is not possible.</p>
+        <h3>How does the app ensure safety?</h3>
+        <p>We provide disclaimers and direct users to professionals for serious concerns. Content is reviewed by healthcare professionals.</p>
+    </div>
+    <div class="container" id="contact">
+        <h2>Contact & Emergency Resources</h2>
+        <p>If you are experiencing a medical emergency, please call 911 immediately.</p>
+        <p>For non-emergencies, visit your nearest clinic or hospital.</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Street Pharmacist. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
